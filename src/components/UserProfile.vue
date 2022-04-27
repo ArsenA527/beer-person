@@ -18,7 +18,7 @@
 <script>
 /* eslint-disable */
 import axios from 'axios';
-import { API_USER_URL } from '@/config.js';
+import { API_USER_URL, API_BEER_URL } from '@/config.js';
 
 export default {
   components: {},
@@ -26,6 +26,7 @@ export default {
   data() {
     return {
       userData: null,
+      beerData: null,
       loading: true,
       errored: false,
     };
@@ -34,6 +35,10 @@ export default {
   computed: {
     user() {
       return this.userData;
+    },
+
+    beer() {
+      return this.beerData;
     },
   },
 
@@ -49,8 +54,12 @@ export default {
         .catch(() => this.errored = true)
         .then(() => this.loading = false);
       }, 1500);
+    },
 
-  },
+    loadBeer() {
+      return axios.get(API_BEER_URL)
+        .then((response) => this.beerData = response.data)
+    },
 
     getCurrentAge(birthDate) {
       return (new Date().getFullYear() - new Date(birthDate).getFullYear());
@@ -59,6 +68,7 @@ export default {
 
   created() {
     this.loadUser();
+    this.loadBeer();
   },
 
   // watch: {

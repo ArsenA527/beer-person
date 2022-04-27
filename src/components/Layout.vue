@@ -3,6 +3,7 @@
     <Header />
     <main class="container main">
       <UserProfile />
+      <!-- <RecommendedBeer /> -->
     </main>
     <Footer />
   </div>
@@ -24,6 +25,7 @@ export default {
 
 <style>
   .main {
+    min-height: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
   }
