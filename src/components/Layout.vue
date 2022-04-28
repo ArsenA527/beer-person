@@ -3,21 +3,17 @@
     <Header />
     <main class="container main">
       <UserProfile />
-      <!-- <RecommendedBeer /> -->
     </main>
-    <Footer />
   </div>
 </template>
 
 <script>
 import Header from './Header.vue';
-import Footer from './Footer.vue';
 import UserProfile from './UserProfile.vue';
 
 export default {
   components: {
     Header,
-    Footer,
     UserProfile,
   },
 };
