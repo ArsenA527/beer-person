@@ -57,6 +57,7 @@ img {
 }
 
 body {
+	min-height: 100vh;
   font-family: 'Roboto', sans-serif;
   background: #042331;
 }

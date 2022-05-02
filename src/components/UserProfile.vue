@@ -177,6 +177,10 @@ export default {
       width: 100%;
       text-align: center;
     }
+
+      .beer-text {
+      max-width: 90%;
+    }
   }
 
 </style>
